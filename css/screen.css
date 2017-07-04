@@ -1,8 +1,6 @@
-/* 响应布局 */
-@media screen and (min-width: 1205px) {
-    body,.g-slide,.g-slide img{width: 1616px;}
-}
 @media screen and (max-width: 1204px) {
-    body,.g-slide,.g-slide img{width: 1205px;}
-    .g-main .m-main{width: 740px;}
+    html,body,.g-slide,.m-note,.g-crumb,.g-nav,.g-body{width:960px;}
+    .g-nav .m-nav div{width: 272px;}
+    .g-nav .m-nav div+div{margin-left: 67px;}
+    .g-body .g-main,.g-main .m-main{width: 735px;}
 }
