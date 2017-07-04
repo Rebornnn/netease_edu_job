@@ -209,12 +209,12 @@ function attentionToFollow(){
 
 
         var form=document.getElementById("login"),
-        query={
-            userName:md5(form.elements[0].value),
-            password:md5(form.elements[1].value)
-        };
+            queryLogin={
+                userName:md5(form.elements[0].value),
+                password:md5(form.elements[1].value)
+            };
    
-        get("https://study.163.com/webDev/login.htm",query,logedIn);
+        get("https://study.163.com/webDev/login.htm",queryLogin,logedIn);
     });
 
     //设置关闭登录框按钮
@@ -465,7 +465,7 @@ function getTop(data){
 window.onload = function() {
     hideNote();
     attentionToFollow();
-    //slider();
+    slider();
 
     query={
         pageNo:1,
