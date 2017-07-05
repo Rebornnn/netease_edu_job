@@ -272,6 +272,9 @@ function slider(){
             clearInterval(timer);
         }
     });
+
+    //设置定时器
+    var timer=setInterval(animate,5000);
     EventUtil.addHandler(gSlide,"mouseout",function(){
         timer=setInterval(animate,5000);
     });
@@ -285,8 +288,7 @@ function slider(){
         });
     }
 
-    //设置定时器
-    var timer=setInterval(animate,5000);
+
 }
 
 //创建课程卡片

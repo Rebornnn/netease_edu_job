@@ -1,6 +1,11 @@
 @media screen and (max-width: 1204px) {
-    html,body,.g-slide,.m-note,.g-crumb,.g-nav,.g-body{width:960px;}
+    html,body,.g-slide,.m-note,.g-crumb,.g-nav,.g-body,.m-gallery{width:960px;}
+    .g-crumb .small-nav{margin-left: 100px;}
     .g-nav .m-nav div{width: 272px;}
     .g-nav .m-nav div+div{margin-left: 67px;}
+    .g-nav .m-nav .logo{margin-bottom: 174px;}
+    .g-nav .m-nav p{height: 120px;overflow: hidden;}
+    .m-gallery{overflow: hidden;}
+    .m-gallery .u-gallery li{width: 256px;}
     .g-body .g-main,.g-main .m-main{width: 735px;}
 }
