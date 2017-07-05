@@ -245,7 +245,7 @@ function slider(){
         //图片淡入
         imgs[nexIndex].style.opacity=0;
         imgs[nexIndex].style.filter="alpha(opacity:0)";
-        var num=0;
+        /*var num=0;
         var t=setInterval(function(){
             if(num<10){
                 num+=2;
@@ -254,7 +254,15 @@ function slider(){
             }else{
                 clearInterval(t);
             }
-        },100);
+        },100);*/
+        for(var num=2;num<=10;num+=2){
+            (function(){
+                setTimeout(function(){
+                    imgs[nexIndex].style.opacity=num/10;
+                    imgs[nexIndex].style.filter='alpha(opacity:'+ num*10 +')';
+                },100*num);
+            })(num);
+        }
     }
 
     //移动图片和圆点
