@@ -1,5 +1,6 @@
 @media screen and (max-width: 1204px) {
-    html,body,.g-slide,.m-note,.g-crumb,.g-nav,.g-body,.m-gallery{width:960px;}
+    html,body{width: 960px;margin-left:100px;}
+    .g-slide,.m-note,.g-crumb,.g-nav,.g-body,.m-gallery{width:960px;}
     .g-crumb .small-nav{margin-left: 100px;}
     .g-nav .m-nav div{width: 272px;}
     .g-nav .m-nav div+div{margin-left: 67px;}
