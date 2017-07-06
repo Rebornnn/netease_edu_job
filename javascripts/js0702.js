@@ -224,12 +224,24 @@ function attentionToFollow(){
 }
 
 //轮播图
-function slider(){
+var silder=(function(){
     var gSlide=document.querySelector(".g-slide"),
         slides=document.querySelector(".g-slide .m-slide"),
         imgs=document.querySelectorAll(".g-slide img"),
         dots=document.querySelectorAll(".m-dot span"),
         cur=0;
+    
+    //自动轮播
+    animate();
+
+    //设置圆点按钮
+    for(var i=0;i<dots.length;i++){
+        EventUtil.addHandler(dots[i],"click",function(){
+            var currentIndex=this.getAttribute("index");
+            next(currentIndex-1);
+            cur=currentIndex-1;
+        });
+    }
 
     //切换图片和圆点
     function  next(nexIndex){
@@ -245,16 +257,6 @@ function slider(){
         //图片淡入
         imgs[nexIndex].style.opacity=0;
         imgs[nexIndex].style.filter="alpha(opacity:0)";
-        /*var num=0;
-        var t=setInterval(function(){
-            if(num<10){
-                num+=2;
-                imgs[nexIndex].style.opacity=num/10;
-                imgs[nexIndex].style.filter='alpha(opacity:'+ num*10 +')';
-            }else{
-                clearInterval(t);
-            }
-        },100);*/
         for(var num=2;num<=10;num+=2){
             (function(){
                 setTimeout(function(){
@@ -265,39 +267,26 @@ function slider(){
         }
     }
 
-    //移动图片和圆点
+    //设置移动图片和圆点
     function animate(){
-        var nex=(cur==2)?0:cur+1;
-        next(nex);
-        cur=nex;
+        timer=setInterval(function(){
+            var nex=(cur==2)?0:cur+1;
+            next(nex);
+            cur=nex;
+        },5000);
     }
 
+
+    EventUtil.addHandler(gSlide,"mouseout",function(){
+        animate();
+    });
 
 
     //设置清除自动轮播
     EventUtil.addHandler(gSlide,"mouseover",function(){
-        if(timer){
             clearInterval(timer);
-        }
     });
-
-    //设置定时器
-    var timer=setInterval(animate,5000);
-    EventUtil.addHandler(gSlide,"mouseout",function(){
-        timer=setInterval(animate,5000);
-    });
-
-    //设置圆点按钮
-    for(var i=0;i<dots.length;i++){
-        EventUtil.addHandler(dots[i],"click",function(){
-            var currentIndex=this.getAttribute("index");
-            next(currentIndex-1);
-            cur=currentIndex-1;
-        });
-    }
-
-
-}
+})();
 
 //创建课程卡片
 function createCard(list){
@@ -475,7 +464,6 @@ function getTop(data){
 window.onload = function() {
     hideNote();
     attentionToFollow();
-    slider();
 
     query={
         pageNo:1,

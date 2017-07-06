@@ -6,7 +6,8 @@
     .g-nav .m-nav div+div{margin-left: 67px;}
     .g-nav .m-nav .logo{margin-bottom: 174px;}
     .g-nav .m-nav p{height: 120px;overflow: hidden;}
-    .m-gallery{overflow: hidden;}
-    .m-gallery .u-gallery li{width: 256px;}
+    .m-gallery,.m-gallery .u-gallery{height: 176px;overflow: hidden;}
+    .m-gallery .u-gallery li,.m-gallery .u-gallery img{width: 256px;}
+    .u-gallery .gallery1{margin-left: -80px;}
     .g-body .g-main,.g-main .m-main{width: 735px;}
 }
